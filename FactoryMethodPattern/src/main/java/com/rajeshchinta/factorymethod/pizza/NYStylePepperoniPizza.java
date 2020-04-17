@@ -1,4 +1,4 @@
-package com.rajeshchinta.factorymethod;
+package com.rajeshchinta.factorymethod.pizza;
 
 public class NYStylePepperoniPizza extends Pizza {
 	public NYStylePepperoniPizza() {

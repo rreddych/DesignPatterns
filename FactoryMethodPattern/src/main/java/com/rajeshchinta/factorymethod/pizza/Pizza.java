@@ -1,4 +1,4 @@
-package com.rajeshchinta.factorymethod;
+package com.rajeshchinta.factorymethod.pizza;
 
 public abstract class Pizza {
 	
@@ -7,7 +7,6 @@ public abstract class Pizza {
 	
 	public Pizza() {
 	}
-
 	
 	public String getName() {
 		return name;

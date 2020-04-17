@@ -1,8 +1,11 @@
-package com.rajeshchinta.factorymethod;
+package com.rajeshchinta.factorymethod.pizzastore;
+
+import com.rajeshchinta.factorymethod.pizza.Pizza;
+import com.rajeshchinta.factorymethod.pizza.PizzaType;
 
 public abstract class PizzaStore {
 	
-	// This is the abstract factory  method, Pizza store allows subclasses to 
+	// This is the factory  method (which is declared abstract), Pizza store allows subclasses to 
 	// define and implement this. So it is determined at run-time.
 	public abstract Pizza createPizza(PizzaType type);
 	

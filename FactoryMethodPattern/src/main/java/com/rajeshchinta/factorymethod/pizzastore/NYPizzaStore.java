@@ -1,4 +1,10 @@
-package com.rajeshchinta.factorymethod;
+package com.rajeshchinta.factorymethod.pizzastore;
+
+import com.rajeshchinta.factorymethod.pizza.NYStyleCheesePizza;
+import com.rajeshchinta.factorymethod.pizza.NYStylePepperoniPizza;
+import com.rajeshchinta.factorymethod.pizza.NYStyleVeggiePizza;
+import com.rajeshchinta.factorymethod.pizza.Pizza;
+import com.rajeshchinta.factorymethod.pizza.PizzaType;
 
 public class NYPizzaStore extends PizzaStore {
 

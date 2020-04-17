@@ -2,6 +2,11 @@ package com.rajeshchinta.factorymethod;
 
 import org.junit.Test;
 
+import com.rajeshchinta.factorymethod.pizza.PizzaType;
+import com.rajeshchinta.factorymethod.pizzastore.ChicagoPizzaStore;
+import com.rajeshchinta.factorymethod.pizzastore.NYPizzaStore;
+import com.rajeshchinta.factorymethod.pizzastore.PizzaStore;
+
 public class TestHarness {
 	@Test
 	public void testNYPizzaStoreOrder() {
