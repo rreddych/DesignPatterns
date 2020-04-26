@@ -23,14 +23,22 @@ public class TestHarness {
 	    
 	    days = dayNames.elements();
 	    
-	    assertTrue(days.hasMoreElements());
-	    assertNotNull(days.nextElement());
+		/*
+		 * assertTrue(days.hasMoreElements()); assertNotNull(days.nextElement());
+		 * 
+		 * while(days.hasMoreElements()) { System.out.println(days.nextElement()); }
+		 */
 	    
 	    EnumerationIteratorAdapter daysInWeek = new EnumerationIteratorAdapter(days);
 	    
 	    
 	    assertTrue(daysInWeek.hasNext());
 	    assertNotNull(daysInWeek.next());
+	    
+	    System.out.println("----------------------");
+	    while(daysInWeek.hasNext()) {
+	    	System.out.println(daysInWeek.next());
+	    }
 	    
 	}
 		
