@@ -12,12 +12,12 @@ public abstract class CaffeineBeverage {
 		this.pourInCup();
 		// Hook: the subclass can hook it's decision of doesUserWantCondiments
 		// but it's not mandatory, as the base class provides a default implementation
-		if (this.doesUserWantCondiments()) {
+		if (this.userWantCondiments()) {
 			this.addCondiments();
 		}
 	}
 	
-	protected boolean doesUserWantCondiments() throws IOException {
+	protected boolean userWantCondiments() throws IOException {
 		return true;
 	}
 

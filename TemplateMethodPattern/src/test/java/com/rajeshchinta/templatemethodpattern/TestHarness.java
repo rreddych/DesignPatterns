@@ -7,16 +7,22 @@ import org.junit.Test;
 public class TestHarness {
 
 	@Test
-	public void testCofeeWithOutHook() throws IOException {
+	public void testCofeeAndTeaWithOutHook() throws IOException {
 		CaffeineBeverage beverage;
-		beverage = new Coffee();
+		beverage = new CoffeeWithOutHook();
+		beverage.prepareReciepe();
+		System.out.println("------------------");
+		beverage = new TeaWithOutHook();
 		beverage.prepareReciepe();
 	}
 	
 	@Test
-	public void testTeaWithHook() throws IOException {
+	public void testCofeeAndTeaWithHooks() throws IOException {
 		CaffeineBeverage beverage;
-		beverage  = new Tea();
+		beverage = new CoffeeWithHook();
+		beverage.prepareReciepe();
+		System.out.println("------------------");
+		beverage = new TeaWithHook();
 		beverage.prepareReciepe();
 	}
 }

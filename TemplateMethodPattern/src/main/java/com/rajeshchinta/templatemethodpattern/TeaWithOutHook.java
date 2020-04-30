@@ -1,16 +1,15 @@
 package com.rajeshchinta.templatemethodpattern;
 
-public class Coffee extends CaffeineBeverage{
-
+public class TeaWithOutHook extends CaffeineBeverage{
+	
 	@Override
 	protected void brew() {
-		System.out.println("Brewing coffee grinds");
-		
+		System.out.println("Steeped Tea Bag");
 	}
 
 	@Override
 	protected void addCondiments() {
-		System.out.println("Added Milk and Sugar");
+		System.out.println("Added Lemon");
 	}
 
 }

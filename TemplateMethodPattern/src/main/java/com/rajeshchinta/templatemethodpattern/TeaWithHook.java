@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Tea extends CaffeineBeverage{
+public class TeaWithHook extends CaffeineBeverage{
 
 	@Override
 	protected void brew() {
@@ -18,7 +18,7 @@ public class Tea extends CaffeineBeverage{
 	
 	// Overriding Hook method
 	@Override
-	protected boolean doesUserWantCondiments() throws IOException {
+	protected boolean userWantCondiments() throws IOException {
 		BufferedReader obj = new BufferedReader(new InputStreamReader(System.in));   
 		   String str; 
 		   System.out.println("Do you want to add lemon? y/n:");
