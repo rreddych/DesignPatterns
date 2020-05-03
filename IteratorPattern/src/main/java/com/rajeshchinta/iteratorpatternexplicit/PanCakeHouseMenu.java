@@ -1,4 +1,4 @@
-package com.rajeshchinta.iteratorpattern;
+package com.rajeshchinta.iteratorpatternexplicit;
 
 import java.util.ArrayList;
 

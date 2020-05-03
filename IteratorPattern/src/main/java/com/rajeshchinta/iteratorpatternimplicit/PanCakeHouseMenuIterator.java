@@ -1,8 +1,9 @@
-package com.rajeshchinta.iteratorpattern;
+package com.rajeshchinta.iteratorpatternimplicit;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class PanCakeHouseMenuIterator implements Iterator{
+public class PanCakeHouseMenuIterator implements Iterator<MenuItem>{
 	
 	private ArrayList<MenuItem> menuItems = null;
 	int currentIndex = 0;
@@ -23,7 +24,7 @@ public class PanCakeHouseMenuIterator implements Iterator{
 	}
 
 	@Override
-	public Object next() {
+	public MenuItem next() {
 		int tempCurrentIndex = currentIndex;
 		currentIndex++;
 		return this.menuItems.get(tempCurrentIndex);

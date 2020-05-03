@@ -1,4 +1,6 @@
-package com.rajeshchinta.iteratorpattern;
+package com.rajeshchinta.iteratorpatternimplicit;
+
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -7,7 +9,7 @@ public class TestHarness {
 	@Test
 	public void testDisplayAllMenu() throws Exception {
 		Menu menu = (Menu) new DinerMenu();
-		Iterator iterator = menu.createIterator();
+		Iterator<MenuItem> iterator = menu.createIterator();
 		System.out.println("------Displaying Full Menu------------");
 		display(iterator);
 		
@@ -15,9 +17,12 @@ public class TestHarness {
 		iterator = menu.createIterator();
 		display(iterator);
 		
+		menu = (Menu) new CafeMenu();
+		iterator = menu.createIterator();
+		display(iterator);
 	}
 
-	public void display(Iterator iterator) {
+	public void display(Iterator<MenuItem> iterator) {
 		
 		do{
 			MenuItem menuItem = (MenuItem)iterator.next();
@@ -28,16 +33,20 @@ public class TestHarness {
 	@Test
 	public void testDisplayAllVegetarian() throws Exception {
 		Menu menu = (Menu) new DinerMenu();
-		Iterator iterator = menu.createIterator();
+		Iterator<MenuItem> iterator = menu.createIterator();
 		System.out.println("------Displaying Vegetarian Menu------------");
 		displayVegetarian(iterator);
 		
 		menu = new PanCakeHouseMenu();
 		iterator = menu.createIterator();
 		displayVegetarian(iterator);
+		
+		menu = (Menu) new CafeMenu();
+		iterator = menu.createIterator();
+		displayVegetarian(iterator);
 	}
 	
-	public void displayVegetarian(Iterator iterator) {
+	public void displayVegetarian(Iterator<MenuItem> iterator) {
 		
 		do{
 			MenuItem menuItem = (MenuItem)iterator.next();

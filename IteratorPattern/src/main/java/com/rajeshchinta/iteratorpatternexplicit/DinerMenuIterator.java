@@ -1,4 +1,4 @@
-package com.rajeshchinta.iteratorpattern;
+package com.rajeshchinta.iteratorpatternexplicit;
 
 public class DinerMenuIterator implements Iterator{
 	
