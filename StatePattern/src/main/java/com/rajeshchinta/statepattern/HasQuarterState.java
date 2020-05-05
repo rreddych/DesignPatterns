@@ -1,0 +1,38 @@
+package com.rajeshchinta.statepattern;
+
+public class HasQuarterState implements State {
+	
+	GumBallMachine gumBallMachine = null;
+	
+	public HasQuarterState(GumBallMachine gumBallMachine) {
+		this.gumBallMachine = gumBallMachine;
+	}
+
+	@Override
+	public void insertQuarter() {
+		System.out.println("Already Quarter in the machine");
+
+	}
+
+	@Override
+	public void ejectQuarter() {
+		if(this.gumBallMachine.getState() instanceof HasQuarterState) {
+			System.out.println("Ejected the quarter");
+			this.gumBallMachine.setState(this.gumBallMachine.getNoQuarterState());
+		}
+
+	}
+
+	@Override
+	public void turnCrank() {
+			System.out.println("Turned Crank");
+			this.gumBallMachine.setState(this.gumBallMachine.getSoldState());
+			this.gumBallMachine.dispense();
+	}
+
+	@Override
+	public void dispense() {
+			System.out.println("The machine is not in Sold state , hence cannot dispense ball");
+	}
+
+}
