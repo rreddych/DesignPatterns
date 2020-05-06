@@ -17,6 +17,7 @@ public class HasQuarterState implements State {
 	@Override
 	public void ejectQuarter() {
 		System.out.println("Ejected the quarter");
+		this.gumBallMachine.setState(this.gumBallMachine.getNoQuarterState());
 	}
 
 	@Override

@@ -67,8 +67,7 @@ public class TestHarness {
 		assertTrue(errorMessage, gumballMachine.getState() instanceof NoQuarterState);
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
-		errorMessage = "The State of the GumBall Machine is expected to be in SOLDout but it's not";
-		assertTrue(errorMessage, gumballMachine.getState() instanceof SoldOutState);
+		// Now with zero balls attempting insertQuarter, turnCrank should result in SoldOut state
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
 		errorMessage = "The State of the GumBall Machine is expected to be in SOLDout but it's not";
