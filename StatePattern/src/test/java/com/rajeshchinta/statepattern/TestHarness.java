@@ -83,5 +83,28 @@ public class TestHarness {
 		assertTrue(errorMessage, gumballMachine.getState() instanceof NoQuarterState);
 	}
 	
+	@Test
+	public void test1in10WinnerState() {
+		GumBallMachine gumballMachine = new GumBallMachine(20);
+		for (int i = 0; i < 30; i++) {
+			gumballMachine.insertQuarter();
+			gumballMachine.turnCrank();
+		}
+	}
 	
+	@Test
+	public void testGumBallMachineRefill() {
+		GumBallMachine gumballMachine = new GumBallMachine(20);
+		for (int i = 0; i < 30; i++) {
+			gumballMachine.insertQuarter();
+			gumballMachine.turnCrank();
+		}
+		
+		gumballMachine.refill(10);
+		
+		for (int i = 0; i < 10; i++) {
+			gumballMachine.insertQuarter();
+			gumballMachine.turnCrank();
+		}
+	}
 }

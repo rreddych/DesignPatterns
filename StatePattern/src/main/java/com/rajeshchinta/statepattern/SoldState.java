@@ -1,5 +1,7 @@
 package com.rajeshchinta.statepattern;
 
+import java.util.Random;
+
 public class SoldState implements State {
 	
 	GumBallMachine gumBallMachine = null;
@@ -27,12 +29,33 @@ public class SoldState implements State {
 
 	@Override
 	public void dispense() {
-			System.out.println("Dispensed gum ball");
-			this.gumBallMachine.setState(this.gumBallMachine.getNoQuarterState());
-			this.gumBallMachine.decrementBallCountByOne();
+		
 			if(this.gumBallMachine.getBallCount() == 0) {
+				this.gumBallMachine.setState(this.gumBallMachine.hasQuarterState);
+				this.gumBallMachine.ejectQuarter();
 				this.gumBallMachine.setState(this.gumBallMachine.getSoldOutState());
-			}
+				System.out.println("Set state to SoldOut!");
+				System.out.println("The machine is out of gumballs, please try again later.");
+			}else {
+				System.out.println("Dispensed gum ball");
+				this.gumBallMachine.decrementBallCountByOne();
+				// One in 10 users win 2 Gum balls, the below random number code is for that.
+				Random random = new Random();
+				int i = random.nextInt(10);
+				if(i == 1) {
+					this.gumBallMachine.setState(this.gumBallMachine.getWinnerState());
+					this.gumBallMachine.dispense();
+				}else {
+					this.gumBallMachine.setState(this.gumBallMachine.getNoQuarterState());
+				}
+				
+			}	
+	}
+
+	@Override
+	public void refill(int ballCount) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

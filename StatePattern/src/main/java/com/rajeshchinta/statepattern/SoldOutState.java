@@ -10,7 +10,7 @@ public class SoldOutState implements State {
 
 	@Override
 	public void insertQuarter() {
-		System.out.println("The machine is in SoldOut state");
+		System.out.println("The machine is in SoldOut state, QuarterInsertion not accepted!");
 
 	}
 
@@ -24,7 +24,7 @@ public class SoldOutState implements State {
 
 	@Override
 	public void turnCrank() {
-		System.out.println("The machine is in SoldOut state");
+		System.out.println("The machine is in SoldOut state, TurnCrank not accepted!");
 
 	}
 
@@ -32,6 +32,12 @@ public class SoldOutState implements State {
 	public void dispense() {
 		System.out.println("The machine is in SoldOut state");
 
+	}
+
+	@Override
+	public void refill(int ballCount) {
+		this.gumBallMachine.setBallCount(ballCount);
+		this.gumBallMachine.setState(this.gumBallMachine.getNoQuarterState());	
 	}
 
 }

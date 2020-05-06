@@ -6,6 +6,7 @@ public class GumBallMachine {
 	State hasQuarterState = null;
 	State soldState = null;
 	State soldOutState = null;
+	State winnerState = null;
 	State state = null;
 	int ballCount = 0;
 	
@@ -15,6 +16,7 @@ public class GumBallMachine {
 		hasQuarterState = new HasQuarterState(this);
 		soldState = new SoldState(this);
 		soldOutState = new SoldOutState(this);
+		winnerState = new WinnerState(this);
 		if(this.ballCount > 0) {
 			state = noQuarterState;
 		}else {
@@ -25,6 +27,10 @@ public class GumBallMachine {
 	
 	public int getBallCount() {
 		return ballCount;
+	}
+	
+	public void setBallCount(int ballCount) {
+		this.ballCount = ballCount;
 	}
 	
 	public void decrementBallCountByOne() {
@@ -55,13 +61,16 @@ public class GumBallMachine {
 		return soldOutState;
 	}
 
+	public State getWinnerState() {
+		return winnerState;
+	}
+
 	public void insertQuarter() {
 		state.insertQuarter();
 	}
 
 	public void turnCrank() {
 		state.turnCrank();
-		this.dispense();
 	}
 
 	public void dispense() {
@@ -70,6 +79,10 @@ public class GumBallMachine {
 
 	public void ejectQuarter() {
 		state.ejectQuarter();		
+	}
+	
+	public void refill(int ballCount) {
+		state.refill(ballCount);
 	}
 
 	

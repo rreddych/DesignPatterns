@@ -16,11 +16,7 @@ public class HasQuarterState implements State {
 
 	@Override
 	public void ejectQuarter() {
-		if(this.gumBallMachine.getState() instanceof HasQuarterState) {
-			System.out.println("Ejected the quarter");
-			this.gumBallMachine.setState(this.gumBallMachine.getNoQuarterState());
-		}
-
+		System.out.println("Ejected the quarter");
 	}
 
 	@Override
@@ -33,6 +29,12 @@ public class HasQuarterState implements State {
 	@Override
 	public void dispense() {
 			System.out.println("The machine is not in Sold state , hence cannot dispense ball");
+	}
+
+	@Override
+	public void refill(int ballCount) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

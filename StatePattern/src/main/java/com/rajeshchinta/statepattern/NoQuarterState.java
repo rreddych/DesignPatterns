@@ -16,7 +16,7 @@ public class NoQuarterState implements State {
 
 	@Override
 	public void ejectQuarter() {
-		System.out.println("No Quarter in the machine");
+		System.out.println("No quarter in the machine");
 	}
 
 	@Override
@@ -28,6 +28,12 @@ public class NoQuarterState implements State {
 	@Override
 	public void dispense() {
 		System.out.println("No Quarter in the machine, please place a quarter and turn the crank on");
+	}
+
+	@Override
+	public void refill(int ballCount) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
