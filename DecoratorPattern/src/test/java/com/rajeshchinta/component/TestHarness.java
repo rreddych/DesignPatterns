@@ -10,28 +10,28 @@ import com.rajeshchinta.decorator.Ginger;
 public class TestHarness {
 	@Test
 	public void testStrongTeaWithCardimumCost() {
-		Cardimam cardimam = new Cardimam(new StrongTea());
-		double cost = cardimam.getCost();
-		String desc = cardimam.getDescription();
+		Cardimam cardimamStrongTea = new Cardimam(new StrongTea());
+		double cost = cardimamStrongTea.getCost();
+		String desc = cardimamStrongTea.getDescription();
 		assertTrue(cost == 19);
 		assertTrue(desc.equalsIgnoreCase("StrongTea-Cardimam"));
 	}
 	
 	@Test
 	public void testStrongTeaWithCardimumPlusGingerCost() {
-		Cardimam cardimam = new Cardimam(new StrongTea());
-		Ginger ginger = new Ginger(cardimam);
-		double cost = ginger.getCost();
-		String desc = ginger.getDescription();
+		Cardimam cardimamStrongTea = new Cardimam(new StrongTea());
+		Ginger gingerCardimumStrongTea = new Ginger(cardimamStrongTea);
+		double cost = gingerCardimumStrongTea.getCost();
+		String desc = gingerCardimumStrongTea.getDescription();
 		assertTrue(cost == 21);
 		assertTrue(desc.equalsIgnoreCase("StrongTea-Cardimam-Ginger"));
 	}
 	
 	@Test
 	public void testLightTeaWithPlusGingerCost() {
-		Ginger ginger = new Ginger(new LightTea());
-		double cost = ginger.getCost();
-		String desc = ginger.getDescription();
+		Ginger gingerLightTea = new Ginger(new LightTea());
+		double cost = gingerLightTea.getCost();
+		String desc = gingerLightTea.getDescription();
 		assertTrue(cost == 12);
 		assertTrue(desc.equalsIgnoreCase("LightTea-Ginger"));
 	}
